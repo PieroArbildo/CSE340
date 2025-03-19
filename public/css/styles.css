@@ -4,3 +4,77 @@
 *:after {
   box-sizing: border-box;
 }
+
+@media only screen and (min-width: 840px) {
+  body {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-image: url(../images/site/small_check.jpg);
+  }
+
+  #wrapper {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 65px;
+    margin-right: 65px;
+    border: 6px solid #01b0d3;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px;
+  }
+
+  nav ul li {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  nav ul li {
+    width: 100px;
+    color: white;
+  }
+
+  nav {
+    height: 60px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+
+  #super-position {
+    position: absolute;
+    top: 252px !important;
+    left: 178px !important;
+  }
+
+  #inv-display {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  #super-position {
+    position: absolute;
+    top: 252px !important;
+    left: 470px !important;
+  }
+}
