@@ -32,7 +32,7 @@ nav ul {
   list-style: none;
 }
 
-nav ul li {
+nav ul li a {
   text-decoration: none;
   padding: 15px;
   color: white;
