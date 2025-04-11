@@ -2,6 +2,7 @@
  * This server.js file is the primary file of the 
  * application. It is used to control the project.
  *******************************************/
+
 /* ***********************
  * Require Statements
  *************************/
@@ -14,13 +15,10 @@ const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
 
-
 const baseController = require("./controllers/baseController")
-
 const inventoryRoute = require("./routes/inventoryRoute")
-
 const accountRoute = require('./routes/accountRoute');
-
+const bodyParser = require("body-parser")
 
 /* ***********************
  * Middleware
@@ -43,6 +41,10 @@ app.use(function(req, res, next){
   next()
 })
 
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 /* ***********************
  * View Engine and Templates
  *************************/
@@ -63,26 +65,7 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", inventoryRoute)
 
 //Account routes
-//app.use('/account', accountRoute);
-app.use("/account",require("./routes/accountRoute"))
-
-
-/* ***********************
-* Express Error Handler
-* Place after all other middleware
-*************************/
-app.get('/error500', (req, res, next) => {
-  // error
-  const err = new Error('This is a forced 500 error');
-  err.status = 500;
-  next(err);
-});
-
-// File Not Found Route - must be last route in list
-app.use(async (req, res, next) => {
-  next({status: 404, message: 'Sorry, we appear to have lost that page.'})
-})
-
+app.use('/account', accountRoute);
 
 /* ***********************
 * Express Error Handler
@@ -148,7 +131,6 @@ app.use(async (err, req, res, next) => {
     nav
   });
 });
-
 
 /* ***********************
  * Local Server Information
