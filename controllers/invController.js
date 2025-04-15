@@ -6,7 +6,7 @@ const invCont = {};
 
 
 
-const validator = require("validator");
+const validator = require("express-validator");
 
 
 
