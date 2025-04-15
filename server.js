@@ -41,7 +41,6 @@ app.use(function(req, res, next){
   next()
 })
 
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
@@ -67,6 +66,7 @@ app.use("/inv", inventoryRoute)
 //Account routes
 app.use('/account', accountRoute);
 
+
 /* ***********************
 * Express Error Handler
 * Place after all other middleware
@@ -83,23 +83,21 @@ app.use(async (err, req, res, next) => {
   })
 })
 
-// Middleware para manejar error 500 intencional
-
-// Ruta para forzar un error 500
+// Middleware  error 500
+/* 
 app.get('/error500', (req, res, next) => {
   const err = new Error('This is a forced 500 error');
   err.status = 500;
-  next(err); // Pasa el error al middleware de manejo de errores
-});
+  next(err);
+});*/
 
-// Ruta para manejar "File Not Found" (404)
+// Route "File Not Found" (404)
 app.use(async (req, res, next) => {
   next({status: 404, message: 'Sorry, we appear to have lost that page.'});
 });
 
 /* ***********************
  * Express Error Handler
- * Colocarlo después de todos los demás middlewares
  *************************/
 
 // Middleware to handle intentional 500 error
@@ -145,3 +143,4 @@ const host = process.env.HOST
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
 })
+

@@ -3,7 +3,7 @@ const accountModel = require("../models/account-model")
 const { body, validationResult } = require("express-validator")
 const validate = {}
 
-/*  **********************************
+ /* **********************************
   *  Registration Data Validation Rules
   * ********************************* */
 validate.registrationRules = () => {
@@ -28,7 +28,7 @@ validate.registrationRules = () => {
 body("account_email")
   .trim()
   .isEmail()
-  .normalizeEmail() // refer to validator.js docs
+  .normalizeEmail()
   .withMessage("A valid email is required.")
   .custom(async (account_email) => {
     const emailExists = await accountModel.checkExistingEmail(account_email)
@@ -125,4 +125,73 @@ validate.checkLoginData = async (req, res, next) => {
   next();
 };
   
+
+
+validate.vehicleRules = () => {
+  return [
+    body('inv_make')
+      .trim()
+      .isLength({ min: 3 })
+      .withMessage('The make must be at least 3 characters long.'),
+    body('inv_model')
+      .trim()
+      .isLength({ min: 3 })
+      .withMessage('The model must be at least 3 characters long.'),
+    body('inv_year')
+      .trim()
+      .isLength({ min: 4, max: 4 })
+      .withMessage('The year must be exactly 4 digits.')
+      .isNumeric()
+      .withMessage('The year must be a numeric value.'),
+    body('inv_description')
+      .notEmpty()
+      .withMessage('A description is required.'),
+    body('inv_price')
+      .trim()
+      .isNumeric()
+      .withMessage('The price must be a numeric value.'),
+    body('inv_miles')
+      .trim()
+      .isNumeric()
+      .withMessage('Mileage must be a numeric value.'),
+    body('classification_id')
+      .notEmpty()
+      .withMessage('Classification is required.'),
+    body('inv_color')
+      .notEmpty()
+      .withMessage('Color is required.')
+  ];
+};
+
+validate.checkVehicleData = async (req, res, next) => {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const db = require("../database");
+    let nav = await utilities.getNav();
+    const { rows: classifications } = await db.query("SELECT * FROM classification ORDER BY classification_name");
+
+    const classificationList = `
+      <select id="classification_id" name="classification_id" required>
+        <option value="">Select a Classification</option>
+        ${classifications.map(c => `
+          <option value="${c.classification_id}" ${c.classification_id == req.body.classification_id ? 'selected' : ''}>
+            ${c.classification_name}
+          </option>`).join('')}
+      </select>
+    `;
+
+    res.render("inventory/add-vehicle", {
+      title: "Add Vehicle",
+      nav,
+      classificationList,
+      errors: errors.array(),
+      vehicle: req.body,
+      message: null
+    });
+    return;
+  }
+  next();
+};
+
   module.exports = validate;

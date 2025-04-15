@@ -322,3 +322,177 @@ p {
 #registerForm input:required:focus:valid {
   background-color: rgb(207, 233, 168);
 }
+
+
+/*week4*/
+#addVehicleForm {
+  background-color: white;
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+#addVehicleForm input,
+#addVehicleForm select,
+#addVehicleForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: Arial, sans-serif; 
+}
+
+#addVehicleForm button {
+  background-color: #c8cac9;
+  color: rgb(0, 0, 0);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+  font-family: Arial, sans-serif; 
+}
+
+#addVehicleForm button:disabled {
+  background-color: #a7acab;
+  cursor: not-allowed;
+}
+
+#addVehicleForm button:hover {
+  background-color: #9c9c9c;
+}
+
+#addVehicleForm input:valid,
+#addVehicleForm select:valid {
+  border-color: green;
+}
+
+#addVehicleForm input:invalid,
+#addVehicleForm select:invalid {
+  border-color: red;
+}
+
+#addVehicleForm .errors {
+  color: red;
+  margin-top: 20px;
+}
+
+#addVehicleForm .message {
+  color: green;
+  margin-top: 20px;
+}
+
+#addVehicleForm h1 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#addVehicleForm input::placeholder,
+#addVehicleForm select::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-style: normal;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
+
+#addVehicleForm {
+  background-color: #40E0D0;
+}
+
+#addVehicleForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-family: Arial, sans-serif; 
+}
+
+#addVehicleForm input,
+#addVehicleForm select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+#addVehicleForm textarea {
+  height: 150px;
+  resize: vertical;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* 4.2*/
+
+#addClassificationForm {
+  background-color: #40E0D0;
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+#addClassificationForm h1 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#addClassificationForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+#addClassificationForm input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#addClassificationForm button {
+  background-color: #c8cac9;
+  color: rgb(0, 0, 0);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#addClassificationForm button:hover {
+  background-color: #9c9c9c;
+}
+
+#addClassificationForm input:valid {
+  border-color: green;
+}
+
+#addClassificationForm input:invalid {
+  border-color: red;
+}
