@@ -9,19 +9,20 @@
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
-const app = express()
-const static = require("./routes/static")
-const baseController = require("./controllers/baseController")
-const inventoryRoute = require("./routes/inventoryRoute")
-const utilities = require('./utilities/');
 const session = require("express-session")
-const pool = require('./database/')
-
-
-const accountRoute = require('./routes/accountRoute');
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
 
+// Project modules
+const app = express()
+const pool = require('./database/')
+const static = require("./routes/static")
+const baseController = require("./controllers/baseController")
+const inventoryRoute = require("./routes/inventoryRoute")
+const accountRoute = require('./routes/accountRoute')
+const utilities = require('./utilities/')
+
+//app.use(express.static("public"));
 
 /* ***********************
  * Middleware
@@ -52,7 +53,7 @@ app.use(cookieParser())
 
 app.use(utilities.checkJWTToken)
 
-
+//app.use(express.static("public"));
 /* ***********************
  * View Engine and Templates
  *************************/
