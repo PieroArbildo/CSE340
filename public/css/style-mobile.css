@@ -32,7 +32,7 @@ nav ul {
   list-style: none;
 }
 
-nav ul li {
+nav ul li a {
   text-decoration: none;
   padding: 15px;
   color: white;
@@ -138,4 +138,38 @@ header {
 
 footer {
   margin-top: 40px;
+}
+
+/*vehicles*/
+
+#inv-display {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+}
+
+#inv-display li {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#inv-display li img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.namePrice span {
+  font-weight: 600;
+  font-size: 20px;
 }
