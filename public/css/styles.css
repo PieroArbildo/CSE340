@@ -78,3 +78,37 @@
     left: 470px !important;
   }
 }
+
+/*vehicles*/
+@media only screen and (min-width: 840px) {
+  .vehicle-detail {
+    margin-left: 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .vehicle-info {
+    margin-top: 50px !important;
+    margin-left: 20px;
+    margin-top: 0;
+    max-width: 50%;
+  }
+
+  .vehicle-image {
+    width: 400px;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 840px) {
+  #inv-display {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
