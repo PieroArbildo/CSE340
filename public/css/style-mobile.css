@@ -173,3 +173,322 @@ footer {
   font-weight: 600;
   font-size: 20px;
 }
+
+/*form login*/
+#h1-login {
+  text-align: center;
+}
+
+#loginForm {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#loginForm label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#email,
+#password {
+  width: 100%;
+  max-width: 250px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+#loginForm button {
+  width: 100%;
+  max-width: 250px;
+  padding: 10px;
+  background-color: #01b0d3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+#loginForm button:hover {
+  background-color: #36c8e6;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: #007bff;
+}
+
+/*register*/
+#h1-register {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#registerForm {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#registerForm label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#firstname,
+#lastname,
+#email,
+#accountPassword {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#pswdBtn {
+  text-align: right;
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#pswdBtn:hover {
+  text-decoration: underline;
+}
+
+#submitBtn {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #01b0d3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#submitBtn:hover {
+  background-color: #36c8e6;
+}
+
+p {
+  text-align: center;
+  font-size: 14px;
+  color: black;
+}
+
+#passwordRequirements {
+  font-size: 12px;
+  color: #777;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/*validation*/
+#registerForm input:required:focus:invalid {
+  background-color: rgb(248, 212, 212);
+}
+
+#registerForm input:required:focus:valid {
+  background-color: rgb(207, 233, 168);
+}
+
+/*week4*/
+#addVehicleForm {
+  background-color: white;
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+#addVehicleForm input,
+#addVehicleForm select,
+#addVehicleForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+#addVehicleForm button {
+  background-color: #c8cac9;
+  color: rgb(0, 0, 0);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+  font-family: Arial, sans-serif;
+}
+
+#addVehicleForm button:disabled {
+  background-color: #a7acab;
+  cursor: not-allowed;
+}
+
+#addVehicleForm button:hover {
+  background-color: #9c9c9c;
+}
+
+#addVehicleForm input:valid,
+#addVehicleForm select:valid {
+  border-color: green;
+}
+
+#addVehicleForm input:invalid,
+#addVehicleForm select:invalid {
+  border-color: red;
+}
+
+#addVehicleForm .errors {
+  color: red;
+  margin-top: 20px;
+}
+
+#addVehicleForm .message {
+  color: green;
+  margin-top: 20px;
+}
+
+#addVehicleForm h1 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#addVehicleForm input::placeholder,
+#addVehicleForm select::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-style: normal;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
+
+#addVehicleForm {
+  background-color: #40e0d0;
+}
+
+#addVehicleForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+#addVehicleForm input,
+#addVehicleForm select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+#addVehicleForm textarea {
+  height: 150px;
+  resize: vertical;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* 4.2*/
+
+#addClassificationForm {
+  background-color: #40e0d0;
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+#addClassificationForm h1 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#addClassificationForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+#addClassificationForm input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#addClassificationForm button {
+  background-color: #c8cac9;
+  color: rgb(0, 0, 0);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#addClassificationForm button:hover {
+  background-color: #9c9c9c;
+}
+
+#addClassificationForm input:valid {
+  border-color: green;
+}
+
+#addClassificationForm input:invalid {
+  border-color: red;
+}

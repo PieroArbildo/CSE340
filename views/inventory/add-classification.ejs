@@ -1,0 +1,23 @@
+<main>
+  <h1>Add Classification</h1>
+
+  <!-- Flash message -->
+  <%- messages() %>
+  <form
+    id="addClassificationForm"
+    action="/inv/add-classification"
+    method="post"
+  >
+    <label for="classification_name">Classification Name</label>
+    <input
+      type="text"
+      id="classification_name"
+      name="classification_name"
+      required
+      maxlength="30"
+      value="<%= typeof classification_name !== 'undefined' ? classification_name : '' %>"
+    />
+
+    <button type="submit">Add Classification</button>
+  </form>
+</main>

@@ -6,17 +6,18 @@
 /* ***********************
  * Require Statements
  *************************/
-const session = require("express-session");
-const pool = require("./database/");
-const utilities = require("./utilities/");
-const express = require("express");
-const expressLayouts = require("express-ejs-layouts");
-const env = require("dotenv").config();
-const app = express();
-const static = require("./routes/static");
-const baseController = require("./controllers/baseController");
-const inventoryRoute = require("./routes/inventoryRoute");
-const accountRoute = require("./routes/accountRoute");
+const session = require("express-session")
+const pool = require('./database/')
+const utilities = require('./utilities/');
+const express = require("express")
+const expressLayouts = require("express-ejs-layouts")
+const env = require("dotenv").config()
+const app = express()
+const static = require("./routes/static")
+const baseController = require("./controllers/baseController")
+const inventoryRoute = require("./routes/inventoryRoute")
+const accountRoute = require('./routes/accountRoute');
+const bodyParser = require("body-parser")
 
 /* ***********************
  * Middleware
@@ -41,6 +42,9 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 /* ***********************
  * View Engine and Templates
  *************************/
@@ -57,8 +61,8 @@ app.get("/", utilities.handleErrors(baseController.buildHome));
 // Inventory routes
 app.use("/inv", inventoryRoute);
 //Account routes
-//app.use('/account', accountRoute);
-app.use("/account",require("./routes/accountRoute"))
+app.use('/account', accountRoute);
+//app.use("/account",require("./routes/accountRoute"))
 
 /* ***********************
  * Force 500 Error Route
