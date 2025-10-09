@@ -31,10 +31,11 @@ router.post(
   utilities.handleErrors(accountController.accountLogin)
 );
 
-// Route to build account management view
+
 router.get(
   "/",
-  utilities.checkJWTToken, // (opcional si ya tienes esta utilidad)
+  utilities.checkJWTToken,
+  utilities.checkLogin,
   utilities.handleErrors(accountController.buildAccountManagement)
 );
 

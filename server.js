@@ -54,6 +54,17 @@ app.set("view engine", "ejs");
 app.use(expressLayouts);
 app.set("layout", "./layouts/layout"); // not at views root
 
+
+/* ***********************
+ * Middleware to pass login status and flash messages to views
+ *************************/
+app.use(async (req, res, next) => {
+  res.locals.loggedin = res.locals.loggedin || false
+  res.locals.notice = req.flash("notice")
+  next()
+})
+
+
 /* ***********************
  * Routes
  *************************/
